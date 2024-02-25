@@ -23,9 +23,6 @@ export const unstable_settings = {
   initialRouteName: 'index',
 };
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-// SplashScreen.preventAutoHideAsync();
-
 export default function RootLayoutNav() {
   const navigation = useNavigation();
 
@@ -40,6 +37,7 @@ export default function RootLayoutNav() {
                 header: () => <CustomHeader />,
               }}
             />
+
             <Stack.Screen
               name="(modal)/filter"
               options={{
@@ -97,6 +95,7 @@ export default function RootLayoutNav() {
                 ),
               }}
             />
+
             <Stack.Screen
               name="basket"
               options={{
@@ -118,27 +117,3 @@ export default function RootLayoutNav() {
     </GestureHandlerRootView>
   );
 }
-
-// export default function RootLayout() {
-//   const [loaded, error] = useFonts({
-//     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-//     ...FontAwesome.font,
-//   });
-
-//   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
-//   useEffect(() => {
-//     if (error) throw error;
-//   }, [error]);
-
-//   useEffect(() => {
-//     if (loaded) {
-//       SplashScreen.hideAsync();
-//     }
-//   }, [loaded]);
-
-//   if (!loaded) {
-//     return null;
-//   }
-
-//   return <RootLayoutNav />;
-// }

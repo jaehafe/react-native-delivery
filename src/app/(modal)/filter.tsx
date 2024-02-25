@@ -6,7 +6,7 @@ import categories from '@/assets/data/filter.json';
 
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
-import { Atom, BadgePercent, ChevronDown, ChevronRight, Pizza } from 'lucide-react-native';
+import { ArrowUpDown, Atom, BadgePercent, ChevronDown, ChevronRight, Pizza } from 'lucide-react-native';
 
 interface Category {
   name: string;
@@ -18,7 +18,7 @@ const ItemBox = () => (
   <>
     <View style={styles.itemContainer}>
       <TouchableOpacity style={styles.item}>
-        <ChevronDown size={20} color={Colors.medium} />
+        <ArrowUpDown size={20} color={Colors.medium} />
         <Text style={{ flex: 1 }}>Sort</Text>
         <ChevronRight size={22} color={Colors.primary} />
       </TouchableOpacity>
@@ -118,7 +118,9 @@ const Filter = () => {
   return (
     <View style={styles.container}>
       <FlatList data={items} renderItem={renderItem} ListHeaderComponent={<ItemBox />} />
+
       <View style={{ height: 76 }} />
+
       <View style={styles.footer}>
         <View style={styles.btnContainer}>
           <Animated.View style={[animatedStyles, styles.outlineButton]}>

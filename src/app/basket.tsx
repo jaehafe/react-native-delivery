@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import { Link } from 'expo-router';
+import SwipeableRow from '@/components/SwipeableRow';
 // import SwipeableRow from '@/Components/SwipeableRow';
 
 const Basket = () => {
@@ -38,7 +39,7 @@ const Basket = () => {
       )}
       {!order && (
         <>
-          {/* <FlatList
+          <FlatList
             data={products}
             ListHeaderComponent={<Text style={styles.section}>Items</Text>}
             ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: Colors.grey }} />}
@@ -71,11 +72,13 @@ const Basket = () => {
 
                 <View style={styles.totalRow}>
                   <Text style={styles.total}>Order Total</Text>
-                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>${(total + FEES.service + FEES.delivery).toFixed(2)}</Text>
+                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
+                    ${(total + FEES.service + FEES.delivery).toFixed(2)}
+                  </Text>
                 </View>
               </View>
             }
-          /> */}
+          />
 
           <View style={styles.footer}>
             <SafeAreaView edges={['bottom']} style={{ backgroundColor: '#fff' }}>

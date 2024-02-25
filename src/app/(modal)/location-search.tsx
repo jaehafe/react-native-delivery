@@ -9,14 +9,14 @@ import { Search } from 'lucide-react-native';
 const LocationSearch = () => {
   const navigation = useNavigation();
   const [location, setLocation] = useState({
-    latitude: 51.5078788,
-    longitude: -0.0877321,
+    latitude: 37.593742,
+    longitude: 127.075925,
     latitudeDelta: 0.02,
     longitudeDelta: 0.02,
   });
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <GooglePlacesAutocomplete
         placeholder="Search or move the map"
         fetchDetails={true}
@@ -64,6 +64,9 @@ const LocationSearch = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   map: {
     flex: 1,
   },
